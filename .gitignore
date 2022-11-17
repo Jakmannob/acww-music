@@ -1,3 +1,9 @@
+# ################### My own gitignores: ###################
+
+soundfiles
+
+# ##########################################################
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
