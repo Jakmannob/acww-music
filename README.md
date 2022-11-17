@@ -20,4 +20,9 @@ soundfiles
     └── 23-snow.mp3
 ```
 
-In a later version, additional modes, such as `rain` may be added.
+## Future work
+
+In a later versions these additional features might be available:
+
+- More modes, such as e.g. `rain`
+- Bell ringing at change of music
