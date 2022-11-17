@@ -4,12 +4,6 @@ import os
 
 class Timer():
 
-    def __call__(self):
-        ret = {'hour': self.hour(),
-               'minute': self.minute(),
-               'winter': self.winter()}
-        return ret
-
     def hour(self):
         now = datetime.datetime.now()
         return now.hour
