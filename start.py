@@ -6,9 +6,10 @@ if __name__ == '__main__':
     t = Timer()
     current = t.current_songfile()
     print(f'Here is the current songfile: {current}')
-    print('I will now play it for 5 seconds...')
+    t = 10
+    print(f'I will now play it for {t} seconds...')
     player = Player()
     player.play(current)
-    time.sleep(5)
+    time.sleep(t)
     player.stop()
     print("Now wasn't that nice!")
