@@ -1,22 +1,30 @@
 import datetime
+import os
 
 
 class Timer():
 
     def __call__(self):
-        ret = {'hour': self.get_hour(),
-               'minute': self.get_minute(),
-               'winter': self.is_winter()}
+        ret = {'hour': self.hour(),
+               'minute': self.minute(),
+               'winter': self.winter()}
         return ret
 
-    def get_hour(self):
+    def hour(self):
         now = datetime.datetime.now()
         return now.hour
 
-    def get_minute(self):
+    def minute(self):
         now = datetime.datetime.now()
         return now.minute
 
-    def is_winter(self):
+    def winter(self):
         now = datetime.datetime.now()
         return now.month in [1, 2, 12]
+
+    def current_songfile(self):
+        hour = str(self.hour()).zfill(2)
+        winter = self.winter()
+
+        suffix = '-' + ('normal' if not winter else 'snow') + '.mp3'
+        return os.path.join('soundfiles', hour, hour + suffix)
