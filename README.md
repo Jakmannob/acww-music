@@ -24,5 +24,11 @@ soundfiles
 
 In a later versions these additional features might be available:
 
-- More modes, such as e.g. `rain`
-- Bell ringing at change of music
+- [ ] Smooth inner-hour transitions:
+  - [ ] Every song seems to have a starting sequence, this is once played when starting the player or at the hour change, so omit this for inner-hour song changes
+  - [ ] Every song has a point from which on it will only loop. Find this point for each song and cut it afterwards
+- [ ] Smooth hour transitions:
+  - [ ] Fade out in the last 10-20s of an hour
+  - [ ] Find a Bell tune and play it at the hour change
+  - [ ] After a short pause, start the first play of the new hour with the starting sequence
+- [ ] More modes, such as e.g. `rain`
