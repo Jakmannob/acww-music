@@ -1,4 +1,6 @@
+import multiprocessing
 import vlc
+from playsound import playsound
 import os
 
 
@@ -47,3 +49,24 @@ class VLCPlayer(Player):
     def stop(self):
         if isinstance(self.player, vlc.MediaListPlayer):
             self.player.stop()
+
+
+class PlaySoundPlayer(Player):
+
+    def __init__(self):
+        super().__init__()
+        self.sound_loop_thread = None
+
+    def loop_sound(self, filename):
+        while True:
+            playsound(filename, block=True)
+
+    def play(self, filename):
+        self.sound_loop_thread = multiprocessing.Process(
+            target=self.loop_sound, args=(filename,), name='acwwThread')
+        # Shut down music thread when the rest of the program exits
+        self.sound_loop_thread.daemon = True
+        self.sound_loop_thread.start()
+
+    def stop(self):
+        self.sound_loop_thread.terminate()

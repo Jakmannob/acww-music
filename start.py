@@ -1,5 +1,5 @@
 from timer.timer import Timer
-from player.player import VLCPlayer
+from player.player import VLCPlayer, PlaySoundPlayer
 import time
 import schedule
 
@@ -7,7 +7,7 @@ import schedule
 if __name__ == '__main__':
     t = Timer()
     current = t.current_songfile()
-    player = VLCPlayer()
+    player = PlaySoundPlayer()
     player.play(current)
 
     def music_job(timer, player):
