@@ -5,6 +5,19 @@ import os
 class Player():
 
     def __init__(self):
+        pass
+
+    def play(self, filename):
+        pass
+
+    def stop(self):
+        pass
+
+
+class VLCPlayer(Player):
+
+    def __init__(self):
+        super().__init__()
         self.player = None
 
     def play(self, filename):
