@@ -20,5 +20,10 @@ class Timer():
         hour = str(self.hour()).zfill(2)
         winter = self.winter()
 
-        suffix = '-' + ('normal' if not winter else 'snow') + '.mp3'
-        return os.path.join('soundfiles', hour, hour + suffix)
+        suffix = '-' + ('normal' if not winter else 'snow')
+        songpath = os.path.join('soundfiles', hour, hour + suffix)
+        suffix = '-loop.mp3'
+        if not os.path.exists(songpath + suffix):
+            suffix = '.mp3'
+        print(songpath + suffix)
+        return songpath + suffix
